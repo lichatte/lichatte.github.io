@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 // Requires the gulp-sass plugin
 var sasss = require('gulp-sass');
-var sass = require('gulp-sass');
 
 gulp.task('sasss', function () {
     return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
@@ -42,32 +41,25 @@ gulp.task('sass', function () {
 
 var useref = require('gulp-useref');
 
-gulp.task('useref', function () {
-    return gulp.src('app/*.html')
-        .pipe(useref())
-        .pipe(gulp.dest('docs'))
-});
 
 // Other requires...
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
-
-gulp.task('useref', function () {
-    return gulp.src('app/*.html')
-        .pipe(useref())
-        // Minifies only if it's a JavaScript file
-        .pipe(gulpIf('*.js', uglify()))
-        .pipe(gulp.dest('docs'))
+var cssnano = require('gulp-cssnano');
+ 
+gulp.task('compress', function () {
+  return gulp.src('app/js/*.js')
+    .pipe(uglify())
+    .on('error', function (err) { console.log( err ) })
+    .pipe(gulp.dest('docs/js'))
 });
 
-var cssnano = require('gulp-cssnano');
-
-gulp.task('useref', function () {
-    return gulp.src('app/*.html')
+gulp.task('useref', function(){
+    return gulp.src('app/**.html')
         .pipe(useref())
-        .pipe(gulpIf('*.js', uglify()))
-        // Minifies only if it's a CSS file
-        .pipe(gulpIf('*.css', cssnano()))
+        .pipe(gulpIf('*.css', cssnano({
+            reduceIdents: false
+          })))
         .pipe(gulp.dest('docs'))
 });
 
@@ -100,7 +92,7 @@ var runSequence = require('run-sequence');
 
 gulp.task('build', function (callback) {
     runSequence('clean:docs',
-        ['sasss', 'useref', 'images'],
+        ['compress','sasss', 'useref', 'images'],
         callback
     )
 });
