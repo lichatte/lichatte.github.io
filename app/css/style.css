@@ -316,6 +316,27 @@ footer {
   padding: 5px;
   font-size: 0.75rem; }
 
+.post__close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 30px;
+  height: 30px; }
+  .post__close:hover {
+    cursor: pointer;
+    filter: brightness(1.2); }
+  .post__close:before, .post__close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #9b98d7; }
+  .post__close:before {
+    transform: rotate(45deg); }
+  .post__close:after {
+    transform: rotate(-45deg); }
+
 .post__more-info {
   display: none;
   background-color: rgba(10, 8, 33, 0.9);
@@ -333,7 +354,9 @@ footer {
   display: flex;
   margin: auto;
   max-height: 90%;
+  overflow-y: scroll;
   padding: 40px;
+  position: relative;
   max-width: 95%; }
   .post__more-info-content p {
     margin-bottom: 20px; }
@@ -742,6 +765,7 @@ footer {
     padding-right: 80px; }
   .post__more-info-content {
     padding: 50px;
+    overflow-y: auto;
     gap: 40px; }
   .profile-wrapper {
     flex-shrink: 0;
@@ -751,7 +775,7 @@ footer {
     max-width: 100px;
     padding: 20px; } }
 
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .intro-profile-pic {
     align-items: center;
     column-gap: 40px;

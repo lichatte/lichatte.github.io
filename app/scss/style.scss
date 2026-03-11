@@ -280,6 +280,37 @@ footer {
 		font-size: 0.75rem;
 	}
 
+	&__close {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		width: 30px;
+		height: 30px;
+
+		&:hover {
+			cursor: pointer;
+			filter: brightness(1.2);
+		}
+
+		&:before,
+		&:after {
+			position: absolute;
+			left: 15px;
+			content: ' ';
+			height: 33px;
+			width: 2px;
+			background-color: $color-soft-periwinkle;
+		}
+
+		&:before {
+			transform: rotate(45deg);
+		}
+
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+
 	&__more-info {
 		display: none;
 		background-color: rgba($color-prussian-blue, 0.9);
@@ -298,7 +329,9 @@ footer {
 		display: flex;
 		margin: auto;
 		max-height: 90%;
+		overflow-y: scroll;
 		padding: 40px;
+		position: relative;
 		max-width: 95%;
 
 		p {
@@ -844,6 +877,7 @@ $clouds: 0.25 55s -420px, 0.4 40s -50px, 0.6 54s 420px, 0.4 28s -270px, 0.35 35s
 
 	.post__more-info-content {
 		padding: 50px;
+		overflow-y: auto;
 		gap: 40px;
 	}
 
@@ -859,7 +893,7 @@ $clouds: 0.25 55s -420px, 0.4 40s -50px, 0.6 54s 420px, 0.4 28s -270px, 0.35 35s
 	}
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
 	.intro-profile-pic {
 		align-items: center;
 		column-gap: 40px;

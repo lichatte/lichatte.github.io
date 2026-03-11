@@ -1,6 +1,6 @@
 const postMenuFilters = document.querySelectorAll('.all-posts__menu a');
 const postLinks = document.querySelectorAll('.post__link');
-const postMoreInfoContainers = document.querySelectorAll('.post__more-info');
+const postMoreInfoClose = document.querySelectorAll('.post__close');
 const mainMenuAnchors = document.querySelectorAll('menu a');
 const sections = document.querySelectorAll('section, footer');
 const arrows = document.getElementById('arrows');
@@ -144,8 +144,8 @@ postLinks.forEach((post) => {
 	});
 });
 
-postMoreInfoContainers.forEach((postContainer) => {	
-	postContainer.addEventListener('click', function(e) {
+postMoreInfoClose.forEach((close) => {	
+	/* postContainer.addEventListener('click', function(e) {
 		const clickedElement = e.target;
 		if (!clickedElement.closest('.post')) return;
 		
@@ -159,5 +159,15 @@ postMoreInfoContainers.forEach((postContainer) => {
 			document.body.style.overflow = 'scroll';
 			postLink.focus();
 		}
+	}); */
+
+	close.addEventListener('click', function(e) {
+		const parentPost = close.closest('.post');
+		const postLink = parentPost.querySelector('.post__link');
+		const currentPostMoreInfo = parentPost.querySelector('.post__more-info');
+		
+		currentPostMoreInfo.style.display = 'none';
+		document.body.style.overflow = 'scroll';
+		postLink.focus();
 	});
 });
