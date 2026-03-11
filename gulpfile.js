@@ -1,6 +1,7 @@
 var gulp = require('gulp');
-// Requires the gulp-sass plugin
 var sasss = require('gulp-sass');
+var sass = require('gulp-sass');
+require('polyfill-object.fromentries');
 
 gulp.task('sasss', function () {
     return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
@@ -40,9 +41,6 @@ gulp.task('sass', function () {
 });
 
 var useref = require('gulp-useref');
-
-
-// Other requires...
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');

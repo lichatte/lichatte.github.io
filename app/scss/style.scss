@@ -40,12 +40,15 @@ body {
 
 a {
 	color: $color-tropical-teal;
-	text-decoration: none;
-	transition: background-color 200ms ease;
+	transition: color 200ms ease;
 
 	&:hover {
-		background-color: rgba($color-pearl-aqua, 0.2);
+		color: $color-pearl-aqua;
 		cursor: pointer;
+
+		img {
+			filter: brightness(1.2) contrast(0.7);
+		}
 	}
 
 	&:focus {
@@ -54,19 +57,19 @@ a {
 	}
 }
 
-h1,
-h2 {
+h1 {
 	margin-bottom: 40px;
 }
 
-h3 {
-	font-size: 1.5rem;
+h2,
+h3,
+h4 {
 	margin-bottom: 20px;
 }
 
+h3,
 h4 {
-	font-size: 2.25rem;
-	margin-bottom: 20px;
+	font-size: 1.5rem;
 }
 
 .hidden {
@@ -76,6 +79,7 @@ h4 {
 
 img {
 	display: block;
+	transition: filter 200ms ease;
 	width: 100%;
 }
 
@@ -92,11 +96,20 @@ img {
 	font-size: 1.75rem;
 }
 
+@keyframes animationgradienttitle {
+  0% {
+      background-position: 0 1600px;
+  }
+  100% {
+      background-position: 1600px 0;
+  }
+}
+
 gradient {
-	background: linear-gradient(280deg, $color-tropical-teal 20%, $color-pearl-aqua 70%, $color-tropical-teal 100%);
+	background-image: linear-gradient(280deg, $color-tropical-teal 20%, $color-soft-periwinkle 70%, $color-tropical-teal 100%);
 	background-clip: text;
-	font-weight: 700;
 	-webkit-text-fill-color: transparent;
+	animation: animationgradienttitle 50s infinite forwards;
 }
 
 menu {
@@ -114,11 +127,12 @@ menu {
 		margin: 20px 0;
 		padding: 10px;
 
-		&:focus {
+		&:focus,
+		&:focus:active {
+			outline-offset: 4px;
 			background-color: $color-lotion;
 		}
 
-		&:hover,
 		&:active,
 		&.active {
 			&:nth-child(1) {
@@ -136,6 +150,10 @@ menu {
 			&:nth-child(4) {
 				background-color: $color-orange-yellow;
 			}
+
+			&:nth-child(5) {
+				background-color: $color-soft-periwinkle;
+			}
 		}
 	}
 }
@@ -146,28 +164,45 @@ menu {
 	max-width: 1200px;
 }
 
+#intro {
+	position: relative;
+
+	.title {
+		animation: fadeIn 2s cubic-bezier(1,-0.8,.6,1) forwards;
+	}
+}
+
 .intro-profile-pic {
+	animation: fadeIn 1.5s cubic-bezier(1,-0.25,.35,1) forwards;
 	background: rgba($color-prussian-blue, 0.9);
 	border-radius: 15px;
 	padding: 40px;
-
-	.profile-wrapper {
-		margin: 0 auto 30px;
-		position: relative;
-	}
+	position: relative;
 
 	p {
 		margin-bottom: 20px;
 	}
 }
 
-section {
+.profile-wrapper {
+	margin: 0 auto 30px;
+	position: relative;
+}
+
+section,
+footer {
 	padding: 80px 0;
+}
+
+.description {
+	font-size: 1.5rem;
+	margin-bottom: 80px;
+	text-align: center;
 }
 
 .all-posts {
 	&__content {
-		columns: 3 300px;
+		columns: 4 260px;
 		column-gap: 40px;
 		transition: opacity 800ms ease 200ms;
 		overflow: hidden;
@@ -187,10 +222,17 @@ section {
 			display: inline;
 			color: $color-lotion;
 			padding: 5px;
+			text-decoration: none;
+			transition: $background-color 200ms ease, border 200ms ease;
 
 			&.active {
 				background-color: $color-tropical-teal;
 				color: $color-dark-amethyst;
+			}
+
+			&:hover:not(.active) {
+				background-color: $color-prussian-blue;
+				border-color: darken($color-tropical-teal, 20%);
 			}
 		}
 	}
@@ -204,18 +246,20 @@ section {
 		margin: 0 0 40px;
 		break-inside: avoid;
 		overflow: hidden;
+		text-decoration: none;
+		transition: transform 200ms ease;
 
 		&:focus {
 			outline-offset: -2px;
+		}
+
+		&:hover {
+			transform: scale(.97);
 		}
 	}
 
 	&__image-wrapper {
 		overflow: hidden;
-
-		img {
-			transition: transform 200ms ease;
-		}
 	}
 
 	&__title-wrapper {
@@ -229,7 +273,7 @@ section {
 	}
 
 	&__tag {
-		background-color: $color-taupe;
+		background-color: $color-silver;
 		border-radius: 5px;
 		color: $color-prussian-blue;
 		padding: 5px;
@@ -269,13 +313,30 @@ section {
 	}
 
 	&__carousel {
+		background-color: $color-prussian-blue;
 		min-width: 60%;
 		overflow-y: scroll;
+		padding: 20px;
+
+		img {
+			margin: 0 auto;
+			max-width: 100%;
+			width: auto;
+		}
+
+		li {
+			&:not(:last-child) {
+				img {
+					margin-bottom: 20px;
+				}
+			}
+		}
 	}
 
 	&__single-image {
 		img {
-			height: 100%;
+			max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+  			height: auto;
 			object-fit: contain;
 		}
 	}
@@ -308,14 +369,23 @@ section {
 	height: 130px;
 	justify-content: center;
 	margin: auto;
+	opacity: 0;
 	overflow: hidden;
 	padding: 0 40px;
 	position: relative;
 	text-align: center;
+	transition: opacity 500ms ease;
 	width: 260px;
 
+	&.animated {
+		opacity: 1;
+
+		skill {
+			animation: 2s skillAnimation ease-in;
+		}
+	}
+
 	skill {
-		animation: 1s skillAnimation ease-in;
 		border: 20px solid $color-dark-amethyst;
 		border-radius: 0 0 300px 300px;
 		border-top: none;
@@ -346,6 +416,7 @@ section {
 		bottom: 0;
 		left: 10px;
 		margin-left: -3px;
+		z-index: -1;
 	}
 
 	&__block {
@@ -354,7 +425,7 @@ section {
 		padding-left: 50px;
 
 		&::after {
-			background-color: $color-dark-amethyst;
+			background-color: $color-orange-yellow;
 			content: '';
 			position: absolute;
 			width: 25px;
@@ -381,17 +452,116 @@ section {
 	}
 
 	&__content {
-		background-color: $color-dark-amethyst;
+		background-color: $color-prussian-blue;
 		border: 2px solid $color-orange-yellow;
 		border-radius: 10px;
 		padding: 20px 30px;
 		position: relative;
 
-		i {
-			display: block;
+		span {
 			color: $color-soft-periwinkle;
-			margin-bottom: 10px;
 		}
+		
+		b {
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		&.centered-text {
+			b {
+				margin: 0;
+			}
+		}
+	}
+}
+
+.footer {
+	opacity: 0;
+	text-align: center;
+
+	&.animated {
+		animation: fadeIn 1s cubic-bezier(.5,0,.35,1) forwards;
+	}
+
+	&__social {
+		align-items: center;
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	&__social-link {
+		padding: 10px;
+		max-width: 70px;
+	}
+}
+
+/* STARS ANIMATION STYLES */
+#star-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.star {
+	position: absolute;
+	background: white;
+	border-radius: 50%;
+	opacity: 0.8;
+	animation: twinkle var(--duration, 3s) infinite ease-in-out;
+	will-change: transform, opacity;
+}
+
+/* Define the animation steps */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+		transform: translateY(150px);
+    }
+    to {
+        opacity: 1;
+		transform: translateY(0);
+    }
+}
+
+@mixin slide-in($direction: left, $duration: 1s, $delay: 200ms, $timing: cubic-bezier(0,.25,.25,1), $fill: forwards) {
+	$from-value: 0;
+
+	@if $direction == left {
+		$from-value: -250px;
+	} @else if $direction == right {
+		$from-value: 250px;
+	}
+
+	@keyframes slideIn-#{$direction} {
+		from {
+			opacity: 0;
+			transform: translateX($from-value);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	animation: slideIn-#{$direction} $duration $delay $timing $fill;
+}
+
+@keyframes twinkle {
+	0%,
+	100% {
+		opacity: 0.3;
+		transform: scale(0.8);
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(1.2);
 	}
 }
 
@@ -412,8 +582,7 @@ section {
 }
 
 /* ANIMATIONS */
-$clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
-	0.35 35s -450px;
+$clouds: 0.25 55s -420px, 0.4 40s -50px, 0.6 54s 420px, 0.4 28s -270px, 0.35 35s -450px;
 
 @each $scale, $time, $marginLeft in $clouds {
 	$i: index($clouds, $scale $time $marginLeft);
@@ -424,6 +593,65 @@ $clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
 		margin-left: $marginLeft;
 	}
 }
+
+#arrows {
+	animation: fadeIn 4s cubic-bezier(1,-0.8,.6,1) forwards;
+	bottom: 20px;
+	display: block;
+	padding: 5px 20px 35px;
+	left: 0;
+	margin: 40px auto 0;
+	position: absolute;
+	right: 0;
+	width: fit-content;
+
+	.arrow {
+		animation: animate 2s infinite;
+		display: block;
+		border-right: 2px solid $color-soft-periwinkle;
+		border-bottom: 2px solid $color-soft-periwinkle;
+		height: 20px;
+		margin: -10px;
+		transform: rotate(45deg);
+		width: 20px;
+
+		&:nth-child(2) {
+			animation-delay: -0.2s;
+		}
+
+		&:nth-child(3) {
+			animation-delay: -0.4s;
+		}
+	}
+}
+
+@keyframes animate {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+		transform: rotate(45deg) translate(10px, 10px);
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+// Animation
+@keyframes arrow-movement {
+    0% { 
+        opacity: 0;
+        top: 45%;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
+
 
 /* OBJECTS */
 .cloud {
@@ -460,7 +688,7 @@ $clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
 }
 
 .cloud-wrap {
-	opacity: 0.3;
+	opacity: 0.1;
 	bottom: 0;
 	left: 0;
 	position: absolute;
@@ -506,14 +734,13 @@ $clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
 	}
 }
 
-.container-hill {
+.hills-container {
     height: 240px;
 	overflow: hidden;
     position: relative;
 
 	.hill {
-		background-color: $color-taupe;
-		opacity: .7;
+		background-color:  darken($color-taupe, 30);
 		position: absolute;
 		bottom: 0px;
 		right: 0;
@@ -523,7 +750,7 @@ $clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
 		border-top-left-radius: 120%;
 
 		&::before {
-			background-color: darken($color-taupe, 20);
+			background-color: darken($color-taupe, 25);
 			content: '';
 			border-top-right-radius: 100%;
 			bottom: -70px;
@@ -534,7 +761,7 @@ $clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
 		}
 
 		&::after {
-			background-color: darken($color-taupe, 30);
+			background-color: darken($color-taupe, 20);
 			border-top-left-radius: 100%;
 			border-top-right-radius: 10%;
 			bottom: -150px;
@@ -556,16 +783,25 @@ $clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
 		font-size: 2.5rem;
 	}
 
+	.subtitle {
+		font-size: 2rem;
+	}
+
 	.timeline {
 		&::after {
 			left: 50%;
 		}
 
 		&__block {
+			opacity: 0;
 			padding: 10px 40px;
 			width: 50%;
 
 			&.left {
+				&.animated {
+					@include slide-in(left);
+				}
+
 				/* Fix the circle for containers on the right side */
 				&::after {
 					right: -16px;
@@ -583,6 +819,10 @@ $clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
 			}
 
 			&.right {
+				&.animated {
+					@include slide-in(right);
+				}
+
 				left: 50%;
 
 				/* Fix the circle for containers on the right side */
@@ -597,31 +837,45 @@ $clouds: 0.25 55s -420px, 0.4 40s -300px, 0.6 54s -680px, 0.4 28s -270px,
 		}
 	}
 
-	.intro-profile-pic {
-		align-items: center;
-		column-gap: 40px;
-		display: flex;
-		padding: 60px;
-
-		.profile-wrapper {
-			min-width: 250px;
-		}
-	}
-
 	section {
 		padding-left: 80px;
 		padding-right: 80px;
 	}
 
 	.post__more-info-content {
-		flex-direction: row;
-		max-height: 75%;
-		max-width: 75%;
 		padding: 50px;
 		gap: 40px;
+	}
 
-		> div:first-child {
-			width: 60%;
+	.profile-wrapper {
+		flex-shrink: 0;
+		margin: 0;
+		width: 200px;
+	}
+
+	.footer__social-link {
+		max-width: 100px;
+		padding: 20px;
+	}
+}
+
+@media (min-width: 900px) {
+	.intro-profile-pic {
+		align-items: center;
+		column-gap: 40px;
+		display: flex;
+	}
+
+	.post__more-info-content {
+		flex-direction: row;
+		max-width: 75%;
+
+		& > div:first-child {
+			width: 45%;
+		}
+
+		& > div:last-child {
+			max-width: 49%;
 		}
 	}
 }
