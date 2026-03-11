@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Marisol Gallegos</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:wght@500,700|Handlee:wght@500,700">
@@ -16,29 +16,37 @@
             <div class="cloud cloud-4"></div>
             <div class="cloud cloud-5"></div>
         </div>
+        <div id="star-container"></div>
         <div class="container">
             <menu>
-                <a class="active" href="#intro"></a>
-                <a href="#works"></a>
-                <a href="#skillset"></a>
-                <a href="#timeline"></a>
+                <a class="active" href="#intro" aria-label="intro"></a>
+                <a href="#works" aria-label="works"></a>
+                <a href="#skillset" aria-label="skillset"></a>
+                <a href="#timeline" aria-label="timeline"></a>
+                <a href="#contact" aria-label="contact"></a>
             </menu>
             
             <section id="intro">
                 <h1 class="title centered-text"><gradient>I'm Marisol Gallegos;</gradient><br>Welcome to my&nbsp;personal&nbsp;hub</h1>
                 <div class="intro-profile-pic">
                     <div class="profile-wrapper">
-                        <img src="images/me.png"/>
+                        <img src="images/me.png" alt="Marisol Gallegos Profile Pic, yup that is me"/>
                     </div>
                     <div>
                         <p>I'm a creative problem solver with drawing and digital illustration experience who's specializing in concept art, particularly character designs, coming in with a vast experience in UX/UI design and front end development of 10+ years.</p>
                         <p>I also know traditional animation and narrative design basics, including visual composition, digital color techniques and its appliances in art direction for different media (videogames, web design, cinema).</p>
-                        <p>Here's my <a href="https://docs.google.com/file/d/1tNYEZ7cIWbM_3GSJrSsGRCuj79GHB10i/preview" target="_blank">Portfolio</a> and my <a href="https://drive.google.com/file/d/1NqJyGC7YDZY4xIQqKqQZLZaiGVn1urnL/preview" target="_blank">Curriculum Vitae</a> if you'd like to see more about me in PDF formats ~</p>
+                        <p>Here are my <a href="https://docs.google.com/file/d/1tNYEZ7cIWbM_3GSJrSsGRCuj79GHB10i/preview" target="_blank">Portfolio</a> and my <a href="https://drive.google.com/file/d/1NqJyGC7YDZY4xIQqKqQZLZaiGVn1urnL/preview" target="_blank">Curriculum Vitae</a>, or keep scrolling down to see more of my abilities.</p>
                     </div>
                 </div>
+                <a href="#" id="arrows">
+                    <span class="arrow"></span>
+                    <span class="arrow"></span>
+                    <span class="arrow"></span>
+                </a>
             </section>
             <section id="works">
                 <h2 class="subtitle centered-text">My Work</h2>
+                <p class="description">You can check out some of my work under different categories.</p>
                 <div class="all-posts">
                     <div class="all-posts__menu">
                         <a class="active" href="#concept-art">Concept Art</a>
@@ -48,9 +56,9 @@
                     </div>
                     <div class="all-posts__content" id="concept-art">
                         <div class="post">
-                            <a class="post__link" data-post-type="carousel">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/concept-art/eli-holt/thumbnail.png"/>
+                                    <img src="images/concept-art/eli-holt/thumbnail.png" alt="Eli Holt Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
                                     <h3>Eli Holt</h3>
@@ -72,22 +80,22 @@
 
                                         <ul class="post__carousel">
                                             <li>
-                                                <img src="images/concept-art/eli-holt/silhouettes.jpg"/>
+                                                <img src="images/concept-art/eli-holt/silhouettes.jpg" alt="Eli Holt - Silhouettes"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/eli-holt/poses.jpg"/>
+                                                <img src="images/concept-art/eli-holt/poses.jpg" alt="Eli Holt - Poses"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/eli-holt/semiotica.jpg"/>
+                                                <img src="images/concept-art/eli-holt/semiotica.jpg" alt="Eli Holt - Semiotics"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/eli-holt/corrections.jpg"/>
+                                                <img src="images/concept-art/eli-holt/corrections.jpg" alt="Eli Holt - Corrections"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/eli-holt/final-design.jpg"/>
+                                                <img src="images/concept-art/eli-holt/final-design.jpg" alt="Eli Holt - Final Design"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/eli-holt/turnaround.jpg"/>
+                                                <img src="images/concept-art/eli-holt/turnaround.jpg" alt="Eli Holt - Turnaround"/>
                                             </li>
                                         </ul>
                                     </div>
@@ -95,9 +103,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <a class="post__link" data-post-type="carousel">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/concept-art/nidon/thumbnail.png"/>
+                                    <img src="images/concept-art/nidon/thumbnail.png" alt="Nidon Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
                                     <h3>Nidon</h3>
@@ -121,13 +129,13 @@
 
                                         <ul class="post__carousel">
                                             <li>
-                                                <img src="images/concept-art/nidon/references.jpg"/>
+                                                <img src="images/concept-art/nidon/references.jpg" alt="Nidon - References"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/nidon/silhouettes.jpg"/>
+                                                <img src="images/concept-art/nidon/silhouettes.jpg" alt="Nidon - Silhouettes"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/nidon/final-design.jpg"/>
+                                                <img src="images/concept-art/nidon/final-design.jpg" alt="Nidon - Final Design"/>
                                             </li>
                                         </ul>
                                     </div>
@@ -135,9 +143,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <a class="post__link" data-post-type="carousel">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/concept-art/traveler-painter/thumbnail.png"/>
+                                    <img src="images/concept-art/traveler-painter/thumbnail.png" alt="Traveler Painter - Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
                                     <h3>Traveler Painter</h3>
@@ -152,22 +160,22 @@
                                     <div class="post__more-info-content">
                                         <div>
                                             <h4>Traveler Painter</h4>
-                                            <p>An old lady who knows that age is just an abstract concept and doesn\'t need anyone telling her what she can and cannot do, so she\'s taken upon herself to see all the best scenarios and preserve them for life in a canvas.</p>
+                                            <p>An old lady who knows that age is just an abstract concept and doesn't need anyone telling her what she can and cannot do, so she's taken upon herself to see all the best scenarios and preserve them for life in a canvas.</p>
                                             <p>This character came up merging the painter and adventurer stereotypes, as well as adding some edge and personality with her age. I started with thumbnails, and the approach was something simple for cartoon animation.</p>
                                         </div>
 
                                         <ul class="post__carousel">
                                             <li>
-                                                <img src="images/concept-art/traveler-painter/silhouettes.png"/>
+                                                <img src="images/concept-art/traveler-painter/silhouettes.png" alt="Traveler Painter - Silhouettes"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/traveler-painter/clothing.png"/>
+                                                <img src="images/concept-art/traveler-painter/clothing.png" alt="Traveler Painter - Clothing"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/traveler-painter/color-schemes.png"/>
+                                                <img src="images/concept-art/traveler-painter/color-schemes.png" alt="Traveler Painter - Color Schemes"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/traveler-painter/final-design.png"/>
+                                                <img src="images/concept-art/traveler-painter/final-design.png" alt="Traveler Painter - Final Design"/>
                                             </li>
                                         </ul>
                                     </div>
@@ -175,9 +183,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <a class="post__link" data-post-type="carousel">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/concept-art/delivery-devil/thumbnail.png"/>
+                                    <img src="images/concept-art/delivery-devil/thumbnail.png" alt="Delivery Devil Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
                                     <h3>Delivery Devil</h3>
@@ -191,26 +199,26 @@
                                 <div class="post__wrapper">
                                     <div class="post__more-info-content">
                                         <div>
-                                            <h4>Traveler Painter</h4>
-                                            <p>An old lady who knows that age is just an abstract concept and doesn\'t need anyone telling her what she can and cannot do, so she\'s taken upon herself to see all the best scenarios and preserve them for life in a canvas.</p>
-                                            <p>This character came up merging the painter and adventurer stereotypes, as well as adding some edge and personality with her age. I started with thumbnails, and the approach was something simple for cartoon animation.</p>
+                                            <h4>Delivery Devil</h4>
+                                            <p>Character I worked on to participate in the YouTube lives organized by MST Design Academy back in June. The initial thumbnails were for explorations on several different stereotypes and had to select only one.</p>
+                                            <p>The inspiration came from skater boys drip and package/food delivery drivers, and even designed his motorbike and skateboard.</p>
                                         </div>
 
                                         <ul class="post__carousel">
                                             <li>
-                                                <img src="images/concept-art/delivery-devil/silhouettes.png"/>
+                                                <img src="images/concept-art/delivery-devil/silhouettes.png" alt="Delivery Devil - Silhouettes"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/delivery-devil/initial-sketches.png"/>
+                                                <img src="images/concept-art/delivery-devil/initial-sketches.png" alt="Delivery Devil - Initial Sketches"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/delivery-devil/props.png"/>
+                                                <img src="images/concept-art/delivery-devil/props.png" alt="Delivery Devil - Props"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/delivery-devil/bike.png"/>
+                                                <img src="images/concept-art/delivery-devil/bike.png" alt="Delivery Devil - Bike"/>
                                             </li>
                                             <li>
-                                                <img src="images/concept-art/delivery-devil/final-design.png"/>
+                                                <img src="images/concept-art/delivery-devil/final-design.png" alt="Delivery Devil - Final Design"/>
                                             </li>
                                         </ul>
                                     </div>
@@ -218,19 +226,22 @@
                             </div>
                         </div>
                         <a class="post__see-more-link" href="https://www.artstation.com/maggie1221" target="_blank">
-                            <img src="images/5968657.png">
+                            <img src="images/artstation.png" alt="ArtStation Logo">
                             <p>If you want to see more, please visit my ArtStation!</p>
                         </a>
                     </div>
                     <div class="all-posts__content hidden" id="digital-art">
                         <div class="post">
-                            <a class="post__link">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/digital-art/facial-painting.png"/>
+                                    <img src="images/digital-art/facial-painting.png" alt="Facial Painting Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
                                     <h3>Facial Study</h3>
                                     <div class="post__tag-wrapper">
+                                        <span class="post__tag">Study</span>
+                                        <span class="post__tag">Character Design</span>
+                                        <span class="post__tag">Facial Expressions</span>
                                         <span class="post__tag">Sketchbook</span>
                                     </div>
                                 </div>
@@ -240,23 +251,27 @@
                                     <div class="post__more-info-content">
                                         <div>
                                             <h4>Facial Study</h4>
-                                            <p>This is a temporary text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam molestias est laudantium eveniet obcaecati neque cum suscipit officia ducimus debitis rerum, ea saepe modi accusantium a nobis, vel voluptatum quasi!</p>
+                                            <p>Painting is not just about understanding color, is about understanding light and its abscence (shadow), and how its reflection upon different layers of bone structure and muscle underneath the skin affect the outcome of what we see in a person's face. This is what this study was about.</p>
                                         </div>
                                         <div class="post__single-image">
-                                            <img src="images/digital-art/facial-painting.png"/>
+                                            <img src="images/digital-art/facial-painting.png" alt="Facial Painting Study"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="post">
-                            <a class="post__link">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/digital-art/facial-muscles.png"/>
+                                    <img src="images/digital-art/facial-muscles.png" alt="Facial Muscles Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
                                     <h3>Facial Muscles Study</h3>
                                     <div class="post__tag-wrapper">
+                                        <span class="post__tag">Study</span>
+                                        <span class="post__tag">Character Design</span>
+                                        <span class="post__tag">Facial Expressions</span>
+                                        <span class="post__tag">Human Anatomy</span>
                                         <span class="post__tag">Sketchbook</span>
                                     </div>
                                 </div>
@@ -265,24 +280,28 @@
                                 <div class="post__wrapper">
                                     <div class="post__more-info-content">
                                         <div>
-                                            <h4>Facial Muscles Study</h4>
-                                            <p>This is a temporary text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam molestias est laudantium eveniet obcaecati neque cum suscipit officia ducimus debitis rerum, ea saepe modi accusantium a nobis, vel voluptatum quasi!</p>
+                                            <h4>Facial Expressions and Muscles Study</h4>
+                                            <p>For character design I was taught it is very important to understand the human anatomy, once it's learned we can modify and make our own rules as we please to break the mold and create more interesting characters, as well as being able to make face gestures more articulately to communicate personalities and emotiones.</p>
+                                            <p>As an exercise this is something I've always loved to do on my free time, I take it as a very first step sometimes for character conceptualization and I take it as a challenge to see how many variations I can come up with during a brainstorming sesh.</p>
                                         </div>
                                         <div class="post__single-image">
-                                            <img src="images/digital-art/facial-muscles.png"/>
+                                            <img src="images/digital-art/facial-muscles.png" alt="Facial Muscles Study"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="post">
-                            <a class="post__link" data-post-type="carousel">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/digital-art/perspective.png"/>
+                                    <img src="images/digital-art/perspective.png" alt="Perspective Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
-                                    <h3>Facial Study</h3>
+                                    <h3>Perspective Study</h3>
                                     <div class="post__tag-wrapper">
+                                        <span class="post__tag">Study</span>
+                                        <span class="post__tag">Character Design</span>
+                                        <span class="post__tag">Human Anatomy</span>
                                         <span class="post__tag">Sketchbook</span>
                                     </div>
                                 </div>
@@ -291,24 +310,28 @@
                                 <div class="post__wrapper">
                                     <div class="post__more-info-content">
                                         <div>
-                                            <h4>Facial Study</h4>
-                                            <p>This is a temporary text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam molestias est laudantium eveniet obcaecati neque cum suscipit officia ducimus debitis rerum, ea saepe modi accusantium a nobis, vel voluptatum quasi!</p>
+                                            <h4>Perspective Study</h4>
+                                            <p>Perspective has always been a struggle for me, and that has limited me to try to pose characters in a more dynamic scenery or keyframe for conceptualization. But this study by my alma mater MST Design Academy helped me overcome some of my personal fears and understand the basics and fundamentals, which allows me to feel more daring in trying new things.</p>
                                         </div>
                                         <div class="post__single-image">
-                                            <img src="images/digital-art/perspective.png"/>
+                                            <img src="images/digital-art/perspective.png" alt="Perspective Study"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="post">
-                            <a class="post__link" data-post-type="carousel">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/digital-art/poses-2.png"/>
+                                    <img src="images/digital-art/poses-2.png" alt="Poses Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
                                     <div class="post__tag-wrapper">
-                                        <h3>Facial Study</h3>
+                                        <h3>Poses and Body Gestures Study</h3>
+                                        <span class="post__tag">Study</span>
+                                        <span class="post__tag">Character Design</span>
+                                        <span class="post__tag">Human Anatomy</span>
+                                        <span class="post__tag">Body Proportions</span>
                                         <span class="post__tag">Sketchbook</span>
                                     </div>
                                 </div>
@@ -317,32 +340,64 @@
                                 <div class="post__wrapper">
                                     <div class="post__more-info-content">
                                         <div>
-                                            <h4>Facial Study</h4>
-                                            <p>This is a temporary text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam molestias est laudantium eveniet obcaecati neque cum suscipit officia ducimus debitis rerum, ea saepe modi accusantium a nobis, vel voluptatum quasi!</p>
+                                            <h4>Poses and Body Gestures Study</h4>
+                                            <p>A character is so much more than just their face, colors and clothes. They express themselves even through the way they stand up in their character sheet. In this study we were taught on how to showcase personalities, hobbies, quirks or emotions of a character through their body, which is a crucial part when designing characters.</p>
                                         </div>
                                         <div class="post__single-image">
-                                            <img src="images/digital-art/poses-2.png"/>
+                                            <img src="images/digital-art/poses-2.png" alt="Poses Study"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <a class="post__see-more-link" href="https://www.instagram.com/li_chatte/" target="_blank">
-                            <img src="images/Instagram_icon.png">
+                            <img src="images/instagram.png" alt="Instagram Logo">
                             <p>If you want to see more, please visit my Instagram!</p>
                         </a>
                     </div>
                     <div class="all-posts__content hidden" id="web-dev">
                         <div class="post">
-                            <a class="post__link" data-post-type="carousel">
+                            <a class="post__link" href="https://lichatte.github.io/faq-accordion/" target="_blank">
                                 <div class="post__image-wrapper">
-                                    <img src="images/web-dev/faq-accordion/thumbnail.png"/>
+                                    <img src="images/web-dev/faq-accordion/thumbnail.png" alt="FAQ Accordion Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
                                     <h3>FAQ Accordion</h3>
                                     <div class="post__tag-wrapper">
-                                        <span class="post__tag">Photoshop</span>
-                                        <span class="post__tag">Character Design</span>
+                                        <span class="post__tag">CSS3</span>
+                                        <span class="post__tag">CSS3 Challenge</span>
+                                        <span class="post__tag">HTML Semantics</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post">
+                            <a class="post__link" href="https://lichatte.github.io/todo/" target="_blank">
+                                <div class="post__image-wrapper">
+                                    <img src="images/web-dev/todo/thumbnail.png" alt="TODO List Thumbnail"/>
+                                </div>
+                                <div class="post__title-wrapper">
+                                    <h3>TODO List</h3>
+                                    <div class="post__tag-wrapper">
+                                        <span class="post__tag">CSS3</span>
+                                        <span class="post__tag">JS</span>
+                                        <span class="post__tag">Object-Oriented</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post">
+                            <a class="post__link" href="#">
+                                <div class="post__image-wrapper">
+                                    <img src="images/web-dev/dia-de-muertos/thumbnail.png" alt="Dia de Muertos Site Thumbnail"/>
+                                </div>
+                                <div class="post__title-wrapper">
+                                    <h3>Día de Muertos Site</h3>
+                                    <div class="post__tag-wrapper">
+                                        <span class="post__tag">CSS3</span>
+                                        <span class="post__tag">CSS3 Animations</span>
+                                        <span class="post__tag">SVG</span>
+                                        <span class="post__tag">Design</span>
                                     </div>
                                 </div>
                             </a>
@@ -350,27 +405,43 @@
                                 <div class="post__wrapper">
                                     <div class="post__more-info-content">
                                         <div>
-                                            <h4>Facial Study</h4>
-                                            <p>This is a temporary text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam molestias est laudantium eveniet obcaecati neque cum suscipit officia ducimus debitis rerum, ea saepe modi accusantium a nobis, vel voluptatum quasi!</p>
+                                            <h4>Día de Muertos Site</h4>
+                                            <p>This was an incredibly fun project I planned with a colleague from my previous job. I focused primarily on the website design, the overall concept of its functionality, and added CSS animations for specific elements; my colleague brought it to life.</p>
+                                            <p>The website was presented as part of a cultural awareness meeting organized by the company. The idea was to share the essence of the Día de Muertos (Day of the Dead), not only as a holiday, but also its significance for the Latino community, the importance and purpose of each element placed on the altar, all in an interactive way.</p>
+                                            <p>We shared a QR code so all our colleagues could interact with the website directly and explore it by themselves.</p>
                                         </div>
-                                        <div class="post__single-image">
-                                            <img src="images/digital-art/Ed.jpg"/>
-                                        </div>
+
+                                        <ul class="post__carousel">
+                                            <li>
+                                                <img src="images/web-dev/dia-de-muertos/desktop.png" alt="Dia De Muertos - Desktop Site"/>
+                                            </li>
+                                            <li>
+                                                <img src="images/web-dev/dia-de-muertos/mobile-unselected.png" alt="Dia De Muertos - Mobile Site"/>
+                                            </li>
+                                            <li>
+                                                <img src="images/web-dev/dia-de-muertos/qr.jpg" alt="Dia De Muertos - QR Design"/>
+                                            </li>
+                                            <li>
+                                                <img src="images/web-dev/dia-de-muertos/color-palette.png" alt="Dia De Muertos - Color Palette"/>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="all-posts__content hidden" id="graphic-design">
-                            <div class="post">
-                            <a class="post__link" data-post-type="carousel">
+                        <div class="post">
+                            <a class="post__link" href="#">
                                 <div class="post__image-wrapper">
-                                    <img src="images/digital-art/Ed.jpg"/>
+                                    <img src="images/graphic-design/baby-shower/demian.jpg" alt="Baby Shower Invitation Thumbnail"/>
                                 </div>
                                 <div class="post__title-wrapper">
-                                    <h3>Facial Study</h3>
+                                    <h3>Baby Shower Invitation</h3>
                                     <div class="post__tag-wrapper">
-                                        <span class="post__tag">Sketchbook</span>
+                                        <span class="post__tag">Event</span>
+                                        <span class="post__tag">Invitation</span>
+                                        <span class="post__tag">Illustrator</span>
                                     </div>
                                 </div>
                             </a>
@@ -378,11 +449,12 @@
                                 <div class="post__wrapper">
                                     <div class="post__more-info-content">
                                         <div>
-                                            <h4>Facial Study</h4>
-                                            <p>This is a temporary text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam molestias est laudantium eveniet obcaecati neque cum suscipit officia ducimus debitis rerum, ea saepe modi accusantium a nobis, vel voluptatum quasi!</p>
+                                            <h4>Baby Shower Invitation</h4>
+                                            <p>Right before the first quarantine started, my family was working on my nephew's baby shower, and I took care of the invitation design we were about to send out.</p>
+                                            <p>I worked with contrasting green-mint and orange pastel tones for a soft baby theme and picked a royalty-free baby fox design to be the front face of the invitation (and the whole event) with the parents' approval to make it like his spirit animal.</p>
                                         </div>
                                         <div class="post__single-image">
-                                            <img src="images/digital-art/Ed.jpg"/>
+                                            <img src="images/graphic-design/baby-shower/demian.jpg" alt="Demian's Baby Shower Invitation"/>
                                         </div>
                                     </div>
                                 </div>
@@ -393,6 +465,7 @@
             </section>
             <section id="skillset">
                 <h2 class="subtitle centered-text">My Skillset</h2>
+                <p class="description">A visual representation of my knowledge in my areas of expertise.<br>Of course, I strive to keep learning in each one of them so these are no limitations, but my current starting points.</p>
                 <div class="layout-columns" id="skills">
                     <div class="multi-skill">
                         <p>Artistic Drawing & Digital Illustration</p>
@@ -433,30 +506,31 @@
             </section>
             <section id="timeline">
                 <h2 class="subtitle centered-text">My Experience</h2>
+                <p class="description">What have I been up to and where?</p>
                 <div class="timeline">
                     <div class="timeline__block left">
                         <div class="timeline__content centered-text">
-                            <i>2026</i>
-                            <b>My Next Challenge</b>
+                            <span>2026</span>
+                            <b>My Next Challenge 🎉</b>
                         </div>
                     </div>
                     <div class="timeline__block right">
                         <div class="timeline__content">
-                            <i>February 2019 - January 2025</i>
+                            <span>February 2019 - January 2025</span>
                             <b>Modernize Home Improvement</b>
                             <p>Frontend development and mockup design for landing pages, A/B testing implementation with VWO.</p>
                         </div>
                     </div>
                     <div class="timeline__block left">
                         <div class="timeline__content">
-                            <i>April 2017 - February 2019</i>
+                            <span>April 2017 - February 2019</span>
                             <b>The Home Depot México</b>
                             <p>Constant improvement for the online shopping experience, frontend development for landing pages and tracking user engagements with JS.</p>
                         </div>
                     </div>
                     <div class="timeline__block right">
                         <div class="timeline__content">
-                            <i>February 2016 - December 2016</i>
+                            <span>February 2016 - December 2016</span>
                             <b>Althea Systems</b>
                             <p>Programming and development of online courses in terms of functionality and data registration, creation and design of graphics, design of the current site of the company.</p>
                         </div>
@@ -464,12 +538,29 @@
                 </div>
             </section>
 
-            <footer>
-                <p>Let's work together! You can reach me out through any of my socials</p>
-                <img src="">
+            <footer class="footer" id="contact">
+                <h2 class="subtitle">Let's work together!</h2>
+                <p class="description">You can reach out to me through any of my socials, or via email ~</p>
+                <div class="footer__social">
+                    <a class="footer__social-link" href="https://www.artstation.com/maggie1221" target="_blank">
+                        <img src="images/artstation.png" alt="ArtStation Logo">
+                    </a>
+                    <a class="footer__social-link" href="https://www.instagram.com/li_chatte/" target="_blank">
+                        <img src="images/instagram.png" alt="Instagram Logo">
+                    </a>
+                    <a class="footer__social-link" href="https://www.facebook.com/liChatteMaloire" target="_blank">
+                        <img src="images/facebook.png" alt="Facebook Logo">
+                    </a>
+                    <a class="footer__social-link" href="https://www.linkedin.com/in/mgallegosch" target="_blank">
+                        <img src="images/linkedin.png" alt="LinkedIn Logo">
+                    </a>
+                </div>
+                <div>
+                    <a href="mailto:lichatte@gmail.com">📧 lichatte@gmail.com</a>
+                </div>
             </footer>
         </div>
-        <div class="container-hill">
+        <div class="hills-container">
             <div class="hill"></div>
         </div>
     </body>
