@@ -44,11 +44,13 @@ function createStars() {
 
 createStars();
 
-arrows.addEventListener('click', function(e) {
+if(arrows) {
+	arrows.addEventListener('click', function(e) {
 	e.preventDefault();
-	const topPosition = document.getElementById('works').offsetTop;
+	const topPosition = document.getElementById('intro').offsetTop;
 	window.scrollTo(0, topPosition);
 });
+}
 
 mainMenuAnchors.forEach((btn) => {
 	btn.addEventListener('click', function (e) {
@@ -62,7 +64,7 @@ mainMenuAnchors.forEach((btn) => {
 const observerOptions = {
 	root: null,
 	rootMargin: '0px',
-	threshold: 0.2
+	threshold: 0.4
 };
 
 const observerCallback = (entries, observer) => {
@@ -82,6 +84,9 @@ const observerCallback = (entries, observer) => {
 			}
 
 			switch (currentSectionId) {
+				case 'intro':
+					document.querySelector('#intro').classList.add('animated');
+					break;
 				case 'skillset':
 					const allSkillsets = document.querySelectorAll('.multi-skill');
 					allSkillsets.forEach((skill) => {
