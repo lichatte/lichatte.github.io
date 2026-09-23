@@ -19,11 +19,6 @@ gulp.task('browserSync', function () {
     })
 });
 
-gulp.task('watch', function () {
-    gulp.watch('app/scss/**/*.scss', ['sass']);
-    // Other watchers
-});
-
 gulp.task('watch', ['browserSync', 'sass'], function () {
     gulp.watch('app/scss/**/*.scss', ['sass']);
     // Reloads the browser whenever HTML or JS files change
@@ -62,17 +57,10 @@ gulp.task('useref', function(){
 });
 
 var imagemin = require('gulp-imagemin');
-
-gulp.task('images', function () {
-    return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
-        .pipe(imagemin())
-        .pipe(gulp.dest('docs/images'))
-});
-
 var cache = require('gulp-cache');
 
 gulp.task('images', function () {
-    return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
+    return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg|webp)')
         // Caching images that ran through imagemin
         .pipe(cache(imagemin({
             interlaced: true

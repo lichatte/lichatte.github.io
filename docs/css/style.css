@@ -780,9 +780,8 @@ footer {
   .post__wrapper {
     overflow: hidden; }
   .profile-wrapper {
-    flex-shrink: 0;
-    margin: 0;
-    width: 200px; }
+    max-width: 350px;
+    width: 70%; }
   .footer__social-link {
     max-width: 100px;
     padding: 20px; } }
@@ -799,4 +798,7 @@ footer {
     .post__more-info-content > div:first-child {
       width: 45%; }
     .post__more-info-content > div:last-child {
-      max-width: 49%; } }
+      max-width: 49%; }
+  .profile-wrapper {
+    margin: 0;
+    width: auto; } }
