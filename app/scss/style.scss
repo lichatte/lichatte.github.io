@@ -911,9 +911,8 @@ $clouds: .25 55s -420px, .18 40s -50px, .3 54s 420px, .2 28s -270px, .35 35s -45
 	}
 
 	.profile-wrapper {
-		flex-shrink: 0;
-		margin: 0;
-		width: 200px;
+		max-width: 350px;
+		width: 70%;
 	}
 
 	.footer__social-link {
@@ -943,5 +942,10 @@ $clouds: .25 55s -420px, .18 40s -50px, .3 54s 420px, .2 28s -270px, .35 35s -45
 		& > div:last-child {
 			max-width: 49%;
 		}
+	}
+
+	.profile-wrapper {
+		margin: 0;
+		width: auto;
 	}
 }
