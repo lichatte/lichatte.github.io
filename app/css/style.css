@@ -139,7 +139,8 @@ body {
   color: #fcfcfc;
   font-family: 'Quicksand';
   font-size: 18px;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
 
 a {
   color: #42b3b1;
@@ -409,11 +410,11 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 
 .multi-skill {
-  align-items: flex-end;
   color: #fcfcfc;
   display: flex;
+  flex-direction: column;
   height: 130px;
-  justify-content: center;
+  justify-content: end;
   margin: auto;
   opacity: 0;
   overflow: hidden;
@@ -426,6 +427,9 @@ footer {
     opacity: 1; }
     .multi-skill.animated skill {
       animation: 2s skillAnimation ease-in; }
+  .multi-skill span {
+    color: #de3c4b;
+    font-weight: 600; }
   .multi-skill skill {
     border: 15px solid #151144;
     border-radius: 0 0 300px 300px;
@@ -562,7 +566,7 @@ footer {
   100% {
     margin-left: 100%; } }
 
-/* ANIMATIONS */
+/* ANIMATED ELEMENTS */
 .cloud-1 {
   animation: animateCloud 55s linear infinite;
   transform: scale(0.25);
@@ -724,6 +728,66 @@ footer {
       position: absolute;
       right: -50%;
       width: 160%; }
+
+@keyframes animateStars {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: .6; }
+  40% {
+    opacity: 1; }
+  50% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0; }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0; } }
+
+.shooting-stars {
+  bottom: 20px;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: -1; }
+  .shooting-stars span {
+    animation: animateStars 3s linear infinite;
+    background: #fcfcfc;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(17, 17, 17, 0.1), 0 0 0 8px rgba(17, 17, 17, 0.1), 0 0 20px rgba(17, 17, 17, 0.1);
+    height: 4px;
+    right: -10%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    width: 4px; }
+    .shooting-stars span::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(90deg, #fcfcfc, transparent); }
+    .shooting-stars span:nth-child(1) {
+      top: 100px;
+      right: 0;
+      animation-delay: 7s;
+      animation-duration: 5s; }
+    .shooting-stars span:nth-child(2) {
+      top: 50px;
+      right: 80%;
+      animation-delay: 13s;
+      animation-duration: 3s; }
+    .shooting-stars span:nth-child(3) {
+      top: 80px;
+      right: 50%;
+      animation-delay: 5s;
+      animation-duration: 6s; }
+    .shooting-stars span:nth-child(4) {
+      top: 0;
+      right: 20%;
+      animation-delay: 9s;
+      animation-duration: 4.5s; }
 
 @media (min-width: 600px) {
   .timeline::after {

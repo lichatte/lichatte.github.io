@@ -36,6 +36,7 @@ body {
 	font-family: 'Quicksand';
 	font-size: 18px;
 	height: 100%;
+	position: relative;
 }
 
 a {
@@ -419,11 +420,11 @@ footer {
 }
 
 .multi-skill {
-	align-items: flex-end;
 	color: $main-font-color;
 	display: flex;
+	flex-direction: column;
 	height: 130px;
-	justify-content: center;
+	justify-content: end;
 	margin: auto;
 	opacity: 0;
 	overflow: hidden;
@@ -439,6 +440,11 @@ footer {
 		skill {
 			animation: 2s skillAnimation ease-in;
 		}
+	}
+
+	span {
+		color: $color-raspberry;
+		font-weight: 600;
 	}
 
 	skill {
@@ -651,7 +657,7 @@ footer {
 	}
 }
 
-/* ANIMATIONS */
+/* ANIMATED ELEMENTS */
 $clouds: .25 55s -420px, .18 40s -50px, .3 54s 420px, .2 28s -270px, .35 35s -450px;
 
 @each $scale, $time, $marginLeft in $clouds {
@@ -838,6 +844,74 @@ $clouds: .25 55s -420px, .18 40s -50px, .3 54s 420px, .2 28s -270px, .35 35s -45
 			position: absolute;
 			right: -50%;
 			width: 160%;
+		}
+	}
+}
+
+$stars: 100px 0 7s 5s, 50px 80% 13s 3s, 80px 50% 5s 6s, 0 20% 9s 4.5s;
+
+@keyframes animateStars
+	{
+		0%
+		{
+			transform: rotate(315deg) translateX(0);
+			opacity: .6;
+		}
+		40%
+		{
+			opacity: 1;
+		}
+		50%
+		{
+			transform: rotate(315deg) translateX(-1000px);
+			opacity: 0;
+		}
+		100%
+		{
+			transform: rotate(315deg) translateX(-1000px);
+			opacity: 0;
+		}
+	}
+
+.shooting-stars {
+	bottom: 20px;
+	height: 100vh;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+
+	span {
+		animation: animateStars 3s linear infinite;
+		background: $color-lotion;
+		border-radius: 50%;
+		box-shadow: 0 0 0 4px rgba($color-black, .1), 0 0 0 8px rgba($color-black, .1), 0 0 20px rgba($color-black, .1);
+		height: 4px;
+		right: -10%;
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		width: 4px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100px;
+			height: 1px;
+			background: linear-gradient(90deg, $color-lotion, transparent);
+		}
+
+		@each $top, $right, $delay, $duration in $stars {
+			$i: index($stars, $top $right $delay $duration);
+
+			&:nth-child(#{$i}) {
+				top: $top;
+				right: $right;
+				animation-delay: $delay;
+				animation-duration: $duration;
+			}
 		}
 	}
 }
